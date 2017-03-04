@@ -1,0 +1,13 @@
+.logoImage{
+    max-width: 200px;
+    margin:20px auto;
+    display: block;
+}
+
+.disbaledImage{
+    cursor: default !important;
+}
+
+.report-table{
+    width: 90%;
+}
