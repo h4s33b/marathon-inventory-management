@@ -10,11 +10,11 @@ import {
     Link,
     IndexLink
 } from 'react-router';
-class AddSale extends Component {
+class AddPurchase extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {  salesDate: new Date(),value:"",productName:""};
+        this.state = {  PurchasesDate: new Date(),value:"",productName:""};
         this.handleSubmit = this.handleSubmit.bind(this);
         //this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -43,22 +43,20 @@ class AddSale extends Component {
         var objectToSave = {
             uid : this.props.application.user.uid,
             userEmail : this.props.application.user.email,
-            store : this.state.storeName,
-            salesDate : this.state.salesDate.getTime(),
+            PurchasesDate : this.state.PurchasesDate.getTime(),
             product : this.state.productName,
-            storeId : this.state.storeName.key,
             productId : this.state.productName.key, 
             quantity :this.refs.quantity.getValue(),
             price : this.refs.price.getValue(),
             totalAmount : Math.floor(this.refs.quantity.getValue() * this.refs.price.getValue())
         }
         console.log(objectToSave);
-        this.props.addSalesRequest(objectToSave);
+        this.props.addPurchasesRequest(objectToSave);
     }
 
 handleDateChange = (event, date) => {
     this.setState({
-      salesDate: date,
+      PurchasesDate: date,
     });
     console.log(date);
   };
@@ -74,18 +72,18 @@ handleDateChange = (event, date) => {
                     <mat.CardTitle title="Add New Store" />
                     <mat.CardText>
                         <form onSubmit={this.handleSubmit} onChange={this.clearErrors}>
-                            <h3>Sales Info</h3>
+                            <h3>Purchases Info</h3>
                             <mat.Divider />
                             <mat.DatePicker
-                                ref="salesDate"
-                                hintText="Sales Date"
+                                ref="PurchasesDate"
+                                hintText="Purchases Date"
                                 className="full-width-container"
-                                floatingLabelText="Sales Date"
-                                value={this.state.salesDate}
+                                floatingLabelText="Purchases Date"
+                                value={this.state.PurchasesDate}
                                 onChange={this.handleDateChange}
                             />
                             <mat.SelectField
-                                floatingLabelText="Frequency"
+                                floatingLabelText="Product Name"
                                 value={this.state.productName}
                                 onChange={this.handleProductChange}
                                 className="full-width-container"
@@ -116,19 +114,7 @@ handleDateChange = (event, date) => {
                                 required={true}
                                 type="text"
                                 onChange={this.handleInputChange}
-                                /><br /> 
-                            <mat.SelectField
-                                floatingLabelText="Frequency"
-                                value={this.state.storeName}
-                                onChange={this.handleChange}
-                                className="full-width-container"
-                                >
-                                {application && application.length>0?
-                                    application.map((data,index)=>{
-                                        return <mat.MenuItem key={index} value={data} primaryText={data.storeName} />
-                                    })
-                                    :""}
-                            </mat.SelectField>
+                                /><br />
                             <br/>
                             <mat.RaisedButton type="submit" label="Submit" primary={true} />
                         </form>
@@ -139,4 +125,4 @@ handleDateChange = (event, date) => {
     }
 }
 
-export default AddSale;
+export default AddPurchase;

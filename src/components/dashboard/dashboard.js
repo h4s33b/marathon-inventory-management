@@ -53,10 +53,7 @@ class Dashboard extends Component {
             <div>
                 <div>
                     <mat.Paper style={style} zDepth={3} >
-                    <Link to="/addReport" style={customAnchor}><h3>I want to file an Incident.</h3></Link>
-                    </mat.Paper>
-                    <mat.Paper style={style} zDepth={3} >
-                        <Link to="/myIncidents" style={customAnchor}><h3>I Want to Review My Complains.</h3></Link>
+                        <h3>This is Dashboard. For your convenience I have added a side menu.</h3>
                     </mat.Paper>
                 </div>
             </div>

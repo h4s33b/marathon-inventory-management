@@ -1,0 +1,32 @@
+.logoImage{
+    max-width: 200px;
+    margin:20px auto;
+    display: block;
+}
+
+.disbaledImage{
+    cursor: default !important;
+}
+
+.report-table{
+    width: 97%;
+    min-height: 100;
+    margin: 20px;
+    text-align: 'center';
+    display: 'inline-block';
+}
+
+.buttonStyle{
+    margin-top: 6px;
+}
+
+.buttonStyle2{
+    margin-top: 6px;
+    margin-left: 16px;
+    margin-right: 40px;
+}
+
+.blood-type{
+    width:50%;
+    margin: 0px auto;
+}

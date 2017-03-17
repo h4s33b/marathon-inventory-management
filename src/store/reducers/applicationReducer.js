@@ -51,6 +51,16 @@ export function applicationReducer(state = initial_state, action) {
       state = newState;
       return state;
     }
+    case ActionTypes.loadSalesRequestSuccess: {
+      var newState = Object.assign({}, state, { allSales: action.data });
+      state = newState;
+      return state;
+    }
+    case ActionTypes.loadPurchasesRequestSuccess: {
+      var newState = Object.assign({}, state, { allPurchase: action.data });
+      state = newState;
+      return state;
+    }
     case ActionTypes.loadCrimesRequestSuccess: {
       var newState = Object.assign({}, state, { allCrimes: action.data });
       state = newState;

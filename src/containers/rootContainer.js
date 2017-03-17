@@ -57,9 +57,14 @@ class rootContainer extends Component {
         browserHistory.push('/viewProducts');
     };
 
-     gotoAllViewCrimes = () => {
+     gotoViewSales = () => {
         this.setState({ open: !this.state.open })
-        browserHistory.push('/viewAllCrimes');
+        browserHistory.push('/viewSales');
+    };
+
+    viewPurchase = () => {
+        this.setState({ open: !this.state.open })
+        browserHistory.push('/viewPurchase');
     };
 
     componentDidMount() {
@@ -81,6 +86,11 @@ class rootContainer extends Component {
         browserHistory.push('/addProduct');
     }
 
+    addPurchase = () => {
+        this.setState({ open: !this.state.open })
+        browserHistory.push('/addPurchase');
+    }
+
 
     logOutRequest = () => {
         this.setState({ open: !this.state.open });
@@ -91,7 +101,7 @@ class rootContainer extends Component {
         return (
             <div>
                 <mat.AppBar
-                    title="Support System"
+                    title="Inventory Management System"
                     onLeftIconButtonTouchTap={this._handleClick}
                     />
                 <mat.Drawer open={this.state.open}
@@ -103,10 +113,10 @@ class rootContainer extends Component {
                     <mat.MenuItem onTouchTap={this.addProduct}>Add Product</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoDashoard}>View Stores</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoAddStores}>Add Stores</mat.MenuItem>
-                    <mat.MenuItem onTouchTap={this.gotoDashoard}>View Sales</mat.MenuItem>
+                    <mat.MenuItem onTouchTap={this.gotoViewSales}>View Sales</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoAddSales}>Add Sales</mat.MenuItem>
-                    <mat.MenuItem onTouchTap={this.gotoDashoard}>View Purchases</mat.MenuItem>
-                    <mat.MenuItem onTouchTap={this.gotoDashoard}>Add Purchases</mat.MenuItem>
+                    <mat.MenuItem onTouchTap={this.viewPurchase}>View Purchases</mat.MenuItem>
+                    <mat.MenuItem onTouchTap={this.addPurchase}>Add Purchases</mat.MenuItem>
                     {/*<mat.MenuItem onTouchTap={this.gotoAvailable}>Add Report</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoComplains}>View My Compalains</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoViewCrimes}>View Crimes List</mat.MenuItem>*/}

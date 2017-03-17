@@ -10,8 +10,12 @@ import rootMainContainer from './containers/rootContainer';
 import DashboardContainer from './containers/dashboard';
 import AddProductContainer from './containers/addProduct';
 import AddStoreContainer from './containers/addStore';
+import UpdateProductContainer from './containers/updateProduct';
 import AddSalesContainer from './containers/addSales';
+import AddPurchaseContainer from './containers/addPurchase';
 import LoadProductsContainer from './containers/loadProducts';
+import LoadSalesContainer from './containers/loadSales';
+import LoadPurchaseContainer from './containers/loadPurchase';
 import ViewAllCrimesContainer from './containers/viewAllCrimes';
 import adminDashboardContainer from './containers/adminContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -40,10 +44,14 @@ class RootComponent extends Component {
                 <IndexRedirect to="/login" />
                 <Route path="/dashboard" component={DashboardContainer} />
                 <Route path="/addProduct" component={AddProductContainer} />
+                <Route path="/updateProduct/:productId" component={UpdateProductContainer} />
                 <Route path="/addStore" component={AddStoreContainer} />
                 <Route path="/addSales" component={AddSalesContainer} />
-                <Route path="/viewProducts" component={LoadProductsContainer} />     
-                <Route path="/viewAllCrimes" component={ViewAllCrimesContainer} />      
+                <Route path="/viewSales" component={LoadSalesContainer} />
+                <Route path="/addPurchase" component={AddPurchaseContainer} />
+                <Route path="/viewPurchase" component={LoadPurchaseContainer} />
+                <Route path="/viewProducts" component={LoadProductsContainer} />
+                <Route path="/viewAllCrimes" component={ViewAllCrimesContainer} />
               </Route>
               <Route path="/login" component={LoginContainer}>
               </Route>

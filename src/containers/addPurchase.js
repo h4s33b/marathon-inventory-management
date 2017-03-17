@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import AddSales from '../components/stores/addSales';
+import AddPurchase from '../components/purchase/addPurchase';
 import { loadInitialState } from '../store/actions/loadInitialState';
-import { addSalesRequest } from '../store/actions/addSales';
+import { addPurchasesRequest } from '../store/actions/addPurchase';
 import { loadUserRequest } from '../store/actions/loadUserData';
 import { loadstoresRequest } from '../store/actions/loadStores';
 import { loadProductsRequest } from '../store/actions/loadProducts';
@@ -22,10 +22,10 @@ function mapDispatchToProps(dispatch) {
     loadUserRequest     : () => dispatch(loadUserRequest()),
     loadstoresRequest          : (reportData) => dispatch(loadstoresRequest(reportData)),
     loadProductsRequest   : (data) => dispatch(loadProductsRequest(data)),
-    addSalesRequest : (data) => dispatch(addSalesRequest(data))
+    addPurchasesRequest  : (data) => dispatch(addPurchasesRequest(data))
   };
 }
 
-const AddSalesContainer = connect(mapStateToProps, mapDispatchToProps)(AddSales);
+const AddPurchaseContainer = connect(mapStateToProps, mapDispatchToProps)(AddPurchase);
 
-export default AddSalesContainer;
+export default AddPurchaseContainer;

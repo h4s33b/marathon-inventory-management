@@ -23,9 +23,17 @@ const actionTypes = {
   addProductRequestFailed: 'addProductRequestFailed',
   addProductRequestSuccess: 'addProductRequestSuccess',
 
+  updateProductRequest: 'updateProductRequest',
+  updateProductRequestFailed: 'updateProductRequestFailed',
+  updateProductRequestSuccess: 'updateProductRequestSuccess',
+
   addSalesRequest: 'addSalesRequest',
   addSalesRequestFailed: 'addSalesRequestFailed',
   addSalesRequestSuccess: 'addSalesRequestSuccess',
+
+  addPurchaseRequest: 'addPurchaseRequest',
+  addPurchaseRequestFailed: 'addPurchaseRequestFailed',
+  addPurchaseRequestSuccess: 'addPurchaseRequestSuccess',
 
   addStoreRequest: 'addStoreRequest',
   addStoreRequestFailed: 'addStoreRequestFailed',
@@ -43,10 +51,22 @@ const actionTypes = {
   loadProductsRequestFailed: 'loadProductsRequestFailed',
   loadProductsRequestSuccess: 'loadProductsRequestSuccess',
 
+  loadSalesRequest: 'loadSalesRequest',
+  loadSalesRequestFailed: 'loadSalesRequestFailed',
+  loadSalesRequestSuccess: 'loadSalesRequestSuccess',
+
+  loadPurchasesRequest: 'loadPurchasesRequest',
+  loadPurchasesRequestFailed: 'loadPurchasesRequestFailed',
+  loadPurchasesRequestSuccess: 'loadPurchasesRequestSuccess',
+
+
   loadstoresRequestFailed: 'loadstoresRequest',
   loadstoresRequestFailed: 'loadstoresRequestFailed',
   loadstoresRequestSuccess: 'loadstoresRequestSuccess',
 
+  loadstoresRequestFailed: 'loadstoresRequest',
+  loadstoresRequestFailed: 'loadstoresRequestFailed',
+  loadstoresRequestSuccess: 'loadstoresRequestSuccess',
 
 
   viewAllCrimesRequest: 'viewAllCrimesRequest',

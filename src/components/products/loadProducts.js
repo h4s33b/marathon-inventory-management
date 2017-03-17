@@ -27,10 +27,12 @@ class LoadProducts extends Component {
     }
 
     componentWillReceiveProps() {
+        var that = this;
         setTimeout(() => {
             if (!this.props.application || !this.props.application.user) {
                 browserHistory.push('/login');
             }
+            console.log(that.props.application.allSales);
         }, 5)
     }
 
@@ -45,6 +47,11 @@ handleRequiredTypeChange = (event, index, value) => { this.setState({ availabili
             return false;
         }
     }
+
+    handleRequiredRequest(event) {
+        browserHistory.push('/addProduct');
+    }
+
     render() {
         const style = {
             minheight: 100,
@@ -148,6 +155,7 @@ handleRequiredTypeChange = (event, index, value) => { this.setState({ availabili
                                         <mat.TableHeaderColumn>Availability</mat.TableHeaderColumn>
                                         <mat.TableHeaderColumn>Availabile Quantity</mat.TableHeaderColumn>
                                         <mat.TableHeaderColumn></mat.TableHeaderColumn>
+                                        <mat.TableHeaderColumn></mat.TableHeaderColumn>
                                     </mat.TableRow>
                                 </mat.TableHeader>
                                 <mat.TableBody displayRowCheckbox={false}>
@@ -160,7 +168,16 @@ handleRequiredTypeChange = (event, index, value) => { this.setState({ availabili
                                                     <mat.TableRowColumn>{todo.manufacturer}</mat.TableRowColumn>
                                                     <mat.TableRowColumn>{todo.availability?"True":"Out Of Stock"}</mat.TableRowColumn>
                                                     <mat.TableRowColumn>{todo.quantity}</mat.TableRowColumn>
-                                                    <mat.TableRowColumn><mat.RaisedButton type="button" label="Request" primary={true} onClick={() => this.handleRequiredRequest(todo)} /></mat.TableRowColumn>
+                                                    <mat.TableRowColumn>
+                                                   {
+                                                       <Link
+                                                        to={"/updateProduct/"+todo.key}
+                                                        className="btn btn-primary">
+                                                        Update
+                                                    </Link>}
+                                                    {/*<mat.RaisedButton type="button" label="Request" primary={true} onClick={() => this.handleRequiredRequest(todo)} />*/}
+                                                    </mat.TableRowColumn>
+                                                    <mat.TableRowColumn></mat.TableRowColumn>
                                                 </mat.TableRow>
                                             );
                                         }
