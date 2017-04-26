@@ -42,7 +42,7 @@ class RootComponent extends Component {
             <Router history={browserHistory}>
               <Route path="/" component={rootMainContainer}>
                 <IndexRedirect to="/login" />
-                <Route path="/dashboard" component={DashboardContainer} />
+                <Route path="/dashboard" component={LoadProductsContainer} />
                 <Route path="/addProduct" component={AddProductContainer} />
                 <Route path="/updateProduct/:productId" component={UpdateProductContainer} />
                 <Route path="/addStore" component={AddStoreContainer} />

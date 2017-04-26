@@ -11,6 +11,7 @@ export function loginRequest(loginData) {
                 return fbConfigs.database.ref('/users/' + data.uid).once('value', snap => {
                     var userobject = snap.val();
                     userobject.uid = data.uid;
+                    localStorage.setItem("inventoryUserData", JSON.stringify(userobject));
                     dispatch(LoginRequestSuccess(userobject));
                 })
                     .catch((error) => {

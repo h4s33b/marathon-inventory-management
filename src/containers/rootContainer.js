@@ -109,7 +109,6 @@ class rootContainer extends Component {
                     onRequestChange={(open) => this.setState({ open })}>
                     <mat.MenuItem disabled className="disbaledImage"><img src="http://rig-serv.com/wp-content/uploads/2016/03/inventory-matters-logo-white.png" className="logoImage" /></mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoDashoard}>Dashoard</mat.MenuItem>
-                    <mat.MenuItem onTouchTap={this.viewProducts}>View Products</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.addProduct}>Add Product</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoDashoard}>View Stores</mat.MenuItem>
                     <mat.MenuItem onTouchTap={this.gotoAddStores}>Add Stores</mat.MenuItem>
